@@ -4,6 +4,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     String firstName;
     String lastName;
+    String email;
     Scanner input=new Scanner(System.in);
 
     //Method to get firstname
@@ -22,6 +23,14 @@ public class UserRegistration {
         return input.nextLine();
     }
 
+    //Method to get Email
+    public String getEmail()
+    {
+        System.out.println("Enter a valid email: ");
+        return input.nextLine();
+    }
+
+
     //Method for validation
     public void userValidator()
     {
@@ -33,7 +42,10 @@ public class UserRegistration {
         boolean lName=Pattern.matches("^[A-Z][a-z]{2,}", lastName);
         System.out.println("Last name is ");
         printingResult(lName);
-
+        this.email=getEmail();
+        boolean emailId=Pattern.matches("^[a-zA-Z.]+([a-z]+)?[@][a-z]+\\.[a-z]{2,3}(\\.[A-Za-z]{2,6})?", email);
+        System.out.println("EmaiId is");
+        printingResult(emailId);
     }
 
     //Method to print result
