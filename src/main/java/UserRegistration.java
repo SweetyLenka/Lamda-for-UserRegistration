@@ -63,7 +63,7 @@ public class UserRegistration {
         System.out.println("Last name is ");
         printingResult(lName);
         this.email=getEmail();
-        boolean emailId=Pattern.matches("^[a-zA-Z.]+([a-z]+)?[@][a-z]+\\.[a-z]{2,3}(\\.[A-Za-z]{2,6})?", email);
+        boolean emailId=Pattern.matches("^[\\\\D\\\\d.\\\\-\\\\+]+[@][a-z\\\\d]+\\\\.[a-z]{2,3}(\\\\.[a-z]{2,3})?", email);
         System.out.println("EmaiId is");
         printingResult(emailId);
         this.mobileNo=getMobileNo();
